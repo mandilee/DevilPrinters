@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">DevilPrinters</string>
+    <string name="opening_times">Weekdays, 9am to 5:30pm</string>
+    <string name="info_email">info@devilprinters.co.uk</string>
+    <string name="company_address">76 Manchester Road, M34 3PS</string>
+    <string name="company_phone">0345 84 333 84</string>
+    <string name="alt_logo_2">Devil Printers Secondary Logo</string>
+    <string name="short_bio">Whether you\'re looking for a home printer or high-end production machine, we have advisers that really know their stuff!</string>
+    <string name="call_us">Call Us on </string>
+    <string name="company_url">www.devilprinters.co.uk</string>
+    <string name="alt_logo">Devil Printers Main Logo</string>
+    <string name="phone">Click to Open Dialler</string>
+    <string name="clock">Opening Times</string>
+    <string name="email">Click to Open Email</string>
+    <string name="email_subject">Information Request</string>
+    <string name="email_body">Sent from the Devil Printers App</string>
+    <string name="address">Company Address</string>
 </resources>

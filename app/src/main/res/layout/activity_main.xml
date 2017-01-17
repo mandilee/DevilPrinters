@@ -9,22 +9,25 @@
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/layout_margin"
+        android:paddingBottom="@dimen/table_bottom_padding"
         android:stretchColumns="0,1">
 
-        <TableRow>
+        <TableRow
+            android:layout_weight="1"
+            android:paddingTop="@dimen/logo_top_padding">
 
             <ImageView
                 android:id="@+id/image"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_span="2"
-                android:contentDescription="Devil Printers Main Logo"
+                android:contentDescription="@string/alt_logo"
                 android:gravity="center"
                 android:src="@drawable/logo" />
         </TableRow>
 
-        <TableRow>
+        <TableRow android:layout_weight="1">
 
             <TextView
                 android:layout_width="match_parent"
@@ -32,104 +35,157 @@
                 android:layout_span="2"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="www.devilprinters.co.uk"
+                android:padding="@dimen/info_padding"
+                android:text="@string/company_url"
                 android:textColor="#000000"
-                android:textSize="25sp" />
+                android:textSize="@dimen/company_url" />
         </TableRow>
 
-        <TableRow>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_span="2"
-                android:gravity="center"
-                android:text="Call Us on 0345 84 333 84"
-                android:textSize="16sp" />
-        </TableRow>
-
-        <TableRow>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_span="2"
-                android:gravity="center"
-                android:padding="20dp"
-                android:text="Whether you're looking for a home printer or high-end production machine, we have advisors that really know their stuff!" />
-        </TableRow>
+                android:paddingEnd="@dimen/info_padding"
+                android:paddingLeft="@dimen/info_padding"
+                android:paddingRight="@dimen/info_padding"
+                android:paddingStart="@dimen/info_padding"
+                android:text="@string/call_us"
+                android:textSize="@dimen/info_text_size" />
 
-        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/company_phone"
+                android:textSize="@dimen/info_text_size" />
+        </LinearLayout>
+
+
+        <TableRow
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_span="2"
-                android:contentDescription="Devil Printers Secondary Logo"
+                android:contentDescription="@string/alt_logo_2"
                 android:gravity="center"
+                android:padding="@dimen/info_padding"
                 android:src="@drawable/devil_woman" />
         </TableRow>
 
+        <TableRow android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_span="2"
+                android:gravity="center"
+                android:padding="@dimen/short_bio_padding"
+                android:text="@string/short_bio"
+                android:textSize="@dimen/short_bio_text" />
+        </TableRow>
+
         <TableRow
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="15dp">
+            android:layout_weight="1"
+            android:padding="@dimen/info_padding">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:contentDescription="@string/clock"
+                android:paddingEnd="@dimen/icon_padding"
+                android:paddingLeft="@dimen/icon_padding"
+                android:paddingRight="@dimen/icon_padding"
+                android:paddingStart="@dimen/icon_padding"
+                android:src="@mipmap/clock" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="end"
-                android:text="Open:"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Weekdays, 9am to 5:30pm"
-                android:textSize="18sp" />
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/opening_times"
+                android:textSize="@dimen/info_text_size" />
         </TableRow>
 
-        <TableRow android:layout_marginBottom="5dp">
+        <TableRow
+            android:layout_weight="1"
+            android:onClick="callUsNow"
+            android:padding="@dimen/info_padding">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:contentDescription="@string/phone"
+                android:paddingEnd="@dimen/icon_padding"
+                android:paddingLeft="@dimen/icon_padding"
+                android:paddingRight="@dimen/icon_padding"
+                android:paddingStart="@dimen/icon_padding"
+                android:src="@mipmap/phone" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="end"
-                android:text="Email:"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/company_phone"
+                android:textSize="@dimen/info_text_size" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="info@devilprinters.co.uk"
-                android:textSize="18sp" />
         </TableRow>
 
-        <TableRow android:layout_marginBottom="15dp">
+        <TableRow
+            android:layout_weight="1"
+            android:onClick="emailUsNow"
+            android:padding="@dimen/info_padding">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:contentDescription="@string/email"
+                android:paddingEnd="@dimen/icon_padding"
+                android:paddingLeft="@dimen/icon_padding"
+                android:paddingRight="@dimen/icon_padding"
+                android:paddingStart="@dimen/icon_padding"
+                android:src="@mipmap/email" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="end"
-                android:text="Address:"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="76 Manchester Road, M34 3PS"
-                android:textSize="16sp" />
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/info_email"
+                android:textSize="@dimen/info_text_size" />
         </TableRow>
 
+        <TableRow
+            android:layout_weight="1"
+            android:padding="@dimen/info_padding">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:contentDescription="@string/address"
+                android:paddingEnd="@dimen/icon_padding"
+                android:paddingLeft="@dimen/icon_padding"
+                android:paddingRight="@dimen/icon_padding"
+                android:paddingStart="@dimen/icon_padding"
+                android:src="@mipmap/address" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/company_address"
+                android:textSize="@dimen/info_text_size" />
+
+        </TableRow>
     </TableLayout>
 </ScrollView>
