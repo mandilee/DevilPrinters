@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     public void emailUsNow(View v) {
         Intent i = new Intent(Intent.ACTION_SEND);
         i.setType("plain/text");
@@ -46,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
         i.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
         i.putExtra(Intent.EXTRA_TEXT, getString(R.string.email_body));
         startActivity(Intent.createChooser(i, ""));
+
+    }
+
+    public void visitWebsite(View v) {
+        String url = "http://" + getString(R.string.company_url);
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse(url));
+        startActivity(intent);
 
     }
 
